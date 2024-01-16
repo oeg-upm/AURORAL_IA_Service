@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Saved models</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
@@ -24,7 +24,51 @@
       </ul>
     </header>
 
+ 
+<div class="row align-items-md-stretch mb-4">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>Ordinary least squares (OLS)</h2>
+          <p>OLS description.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "models/ols" %}' class="nav-link">See models</a></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>Lasso</h2>
+          <p>Lasso description.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+        </div>
+      </div>
+    </div>
         
+        <div class="row align-items-md-stretch mb-4">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>SVM Classification</h2>
+          <p>SVM description.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>SVM Regression</h2>
+          <p>SVM description.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+        </div>
+      </div>
+    </div>
+        
+    <div class="row align-items-md-stretch mb-4">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>KMeans</h2>
+          <p>Kmeans description.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+        </div>
+      </div>
+
+    </div>       
 
   <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
