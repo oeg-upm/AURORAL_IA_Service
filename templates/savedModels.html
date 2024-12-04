@@ -12,15 +12,14 @@
 <body>
     <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <a href="/savedModels" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img class="bi me-2" width="150" height="32" src="{% static 'img/auroral.png' %}" alt=""/>
-        <span class="fs-4">IA Service</span>
+        <span class="fs-4">AI Service</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href='{% url "index" %}' class="nav-link">Home</a></li>
-        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link">Create model</a></li>
-        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link active" aria-current="page">Saved models</a></li>
-        <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
+          <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
+          <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link">Execute model</a></li>
+          <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link active" aria-current="page">Model executions</a></li>
       </ul>
     </header>
 
@@ -37,7 +36,7 @@
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Lasso</h2>
           <p>Lasso description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "models/lasso" %}' class="nav-link">See models</a></button>
         </div>
       </div>
     </div>
@@ -47,14 +46,14 @@
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>SVM Classification</h2>
           <p>SVM description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "models/classification" %}' class="nav-link">See models</a></button>
         </div>
       </div>
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>SVM Regression</h2>
           <p>SVM description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "models/regression" %}' class="nav-link">See models</a></button>
         </div>
       </div>
     </div>
@@ -64,7 +63,7 @@
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>KMeans</h2>
           <p>Kmeans description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">See models</a></button>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "models/kmeans" %}' class="nav-link">See models</a></button>
         </div>
       </div>
 

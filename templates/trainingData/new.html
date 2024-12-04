@@ -12,15 +12,14 @@
 <body>
     <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <a href="/savedModels" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img class="bi me-2" width="150" height="32" src="{% static 'img/auroral.png' %}" alt=""/>
-        <span class="fs-4">IA Service</span>
+        <span class="fs-4">AI Service</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href='{% url "index" %}' class="nav-link">Home</a></li>
-        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link">Create model</a></li>
-        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Saved models</a></li>
         <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link active" aria-current="page">Training data</a></li>
+        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link">Execute model</a></li>
+        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Model executions</a></li>
       </ul>
     </header>
     
@@ -34,11 +33,14 @@
     </div>
 
     <div class="form-group" id="values_field">
-        <label for="id_values">Values (or load CSV file):</label>
+        <label for="id_values">Manual values (Option 1):</label>
         {{ form.values }}
     </div>
+    
+    <label for="csv_url">KGB URL data (Option 2):</label>
+    <input type="url" id="csv_url" name="csv_url" class="form-control">
 
-    <label for="csv_file">Load CSV file (optional):</label>
+    <label for="csv_file">Load CSV file (Option 3):</label>
     <input type="file" id="csv_file" name="csv_file" class="form-control">
 
     <label for="column_choice">Choose CSV column:</label>

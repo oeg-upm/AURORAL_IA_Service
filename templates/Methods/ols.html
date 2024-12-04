@@ -12,15 +12,14 @@
 <body>
     <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/static" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <a href="/savedModels" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img class="bi me-2" width="150" height="32" src="{% static 'img/auroral.png' %}" alt=""/>
-        <span class="fs-4">IA Service</span>
+        <span class="fs-4">AI Service</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href='{% url "index" %}' class="nav-link">Home</a></li>
-        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link active" aria-current="page">Create model</a></li>
-        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Saved models</a></li>
-        <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
+          <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
+        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link active" aria-current="page">Execute model</a></li>
+        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Model executions</a></li>
       </ul>
     </header>
     
@@ -32,7 +31,7 @@
         {{ form.name }}
     </div>
     <div class="mb-3">
-        <label for="{{ form.endpoint.id_for_label }}" class="form-label">Endpoint:</label>
+        <label for="{{ form.endpoint.id_for_label }}" class="form-label">KGB Endpoint:</label>
         {{ form.endpoint }}
     </div>
     <div class="mb-3">

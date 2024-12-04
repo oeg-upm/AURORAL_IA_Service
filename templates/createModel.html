@@ -12,15 +12,14 @@
 <body>
     <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <a href="/savedModels" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img class="bi me-2" width="150" height="32" src="{% static 'img/auroral.png' %}" alt=""/>
-        <span class="fs-4">IA Service</span>
+        <span class="fs-4">AI Service</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href='{% url "index" %}' class="nav-link">Home</a></li>
-        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link  active" aria-current="page">Create model</a></li>
-        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Saved models</a></li>
         <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
+        <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link  active" aria-current="page">Execute model</a></li>
+        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Model executions</a></li>
       </ul>
     </header>
 
@@ -28,15 +27,15 @@
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Ordinary least squares (OLS)</h2>
-          <p>OLS description.</p>
+          <p>Useful for analysing sensor data in IoT devices. For example, it can help predict energy consumption in smart homes based on past usage patterns.</p>
           <button class="btn btn-outline-light" type="button"><a href='{% url "Methods/ols" %}' class="nav-link">Create</a></button>
         </div>
       </div>
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Lasso</h2>
-          <p>Lasso description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">Create</a></button>
+          <p>Useful for filtering important information from large volumes of IoT data. For example, it can identify sensor faults to anticipate industrial equipment failures.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "Methods/lasso" %}' class="nav-link">Create</a></button>
         </div>
       </div>
     </div>
@@ -45,15 +44,15 @@
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>SVM Classification</h2>
-          <p>SVM description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">Create</a></button>
+          <p>Useful for categorising IoT data, such as differentiating between normal and abnormal operation of machines in a smart factory based on sensor readings.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "Methods/classification" %}' class="nav-link">Create</a></button>
         </div>
       </div>
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>SVM Regression</h2>
-          <p>SVM description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">Create</a></button>
+          <p>Useful for predicting future trends in IoT, such as estimating the lifetime of components in smart devices from wear and tear data.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "Methods/regression" %}' class="nav-link">Create</a></button>
         </div>
       </div>
     </div>
@@ -62,8 +61,8 @@
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>KMeans</h2>
-          <p>Kmeans description.</p>
-          <button class="btn btn-outline-light" type="button"><a href='{% url "createModel" %}' class="nav-link">Create</a></button>
+          <p>Useful for segmenting large IoT data sets. For example, it can group users in a smart city according to their water or electricity consumption patterns, helping in the optimisation of resources.</p>
+          <button class="btn btn-outline-light" type="button"><a href='{% url "Methods/kmeans" %}' class="nav-link">Create</a></button>
         </div>
       </div>
 

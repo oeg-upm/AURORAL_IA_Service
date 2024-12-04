@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Regression Models</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
@@ -17,19 +17,33 @@
         <span class="fs-4">AI Service</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link active" aria-current="page">Training data</a></li>
         <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link">Execute model</a></li>
-        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Model executions</a></li>
+        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link active" aria-current="page">Model executions</a></li>
+        <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
       </ul>
     </header>
     
-    <h1>All training data:</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save changes</button>
-    </form>
+    <h1>SVM Regression models:</h1>
 
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    {% for model in object_list %}
+      <div class="col">
+        <div class="card shadow-sm">
+          {% if model.plot %}
+            <img src="{{ model.plot.url }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+          {% else %}
+            <img src="{% static 'img/noimage.jpg' %}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+          {% endif %}
+    <h1><div class="card-body">
+        <p class="card-text text-center"><a href="{% url 'regression_model_detail' model.id %}">{{ model.name }}</a></p>
+    </div></h1>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+        
   <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
       <p class="text-center text-body-secondary">© 2023 Universidad Politécnica de Madrid</p>

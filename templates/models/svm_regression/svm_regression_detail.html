@@ -17,19 +17,20 @@
         <span class="fs-4">AI Service</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link active" aria-current="page">Training data</a></li>
         <li class="nav-item"><a href='{% url "createModel" %}' class="nav-link">Execute model</a></li>
-        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link">Model executions</a></li>
+        <li class="nav-item"><a href='{% url "savedModels" %}' class="nav-link active" aria-current="page">Model executions</a></li>
+        <li class="nav-item"><a href='{% url "trainingData" %}' class="nav-link">Training data</a></li>
       </ul>
     </header>
     
-    <h1>All training data:</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save changes</button>
-    </form>
+    <h1>Model: {{ object.name }}</h1>
 
+{% block content %}
+  <img src="{{ object.plot.url }}" alt="Plot Image" width="400">
+  <p>Values:</p>
+  <pre>{{ object.values }}</pre>
+{% endblock %}
+        
   <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
       <p class="text-center text-body-secondary">© 2023 Universidad Politécnica de Madrid</p>
