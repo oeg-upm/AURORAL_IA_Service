@@ -1,0 +1,7 @@
+
+/.idea
+/IA/migrations
+/IAService/__pycache__
+/IA/__pycache__
+static/ols/plot.png
+db.sqlite3
